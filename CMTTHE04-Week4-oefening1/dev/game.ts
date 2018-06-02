@@ -1,5 +1,5 @@
 /// <reference path="ball.ts"/>
-//BEGIN SCHERM
+//leidend SCHERM
 
 class Game {
     screen: any
@@ -12,15 +12,25 @@ class Game {
         this.gameLoop()        
     }
 
+    //Public houd in dat je het ook buiten deze file kan gaan gebruiken.
     //Richt je door naar playsreen.ts
-    private showPlayScreen(){
-        
+    public showPlayScreen(){
+
         //Dit maakt de body van html leeg, zodat je alleen het achergrond ziet.
         document.body.innerHTML = ""
 
         //"This" is een instance. De variabele this.screen verwijst naar playscreen.ts
         this.screen = new PlayScreen(this)
-               
+    }
+
+    //Word afgespeeld wanneer playscreen.ts is uitgespeeld
+    public showEndScreen(score:number){
+        //Leegt de screen
+        document.body.innerHTML = ""
+
+        //Neemt "score" parameter in zich mee van playscreen.ts
+        //Gaat met deze functie naar gameover.ts
+        this.screen = new GameOverScreen(this, score)
     }
 
     private gameLoop():void{

@@ -21,9 +21,7 @@ class StartScreen {
         
     }
 
-    private splashClicked() {
-        // TODO: geef door aan 'game' dat het spel gestart moet worden
-        
+    private splashClicked() {   
         //Wanneer je klikt, word je doorgestuurd naar game.ts
         //Waarna je doorgestuurd word naar de showPlayScreen() functie.
         this.game.showPlayScreen()

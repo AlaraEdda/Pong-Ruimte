@@ -2,6 +2,7 @@
 
 class Ball {
     
+    private screen: PlayScreen      //Verwijzing naar playscreen.ts
     private div : HTMLElement
     
     private x : number
@@ -10,7 +11,9 @@ class Ball {
     private speedX: number
     private speedY: number
     
-    constructor() {
+    // Paramter  van playscreen.ts binnen. die parameter staat gelijk aan this.screen.
+    constructor(s: PlayScreen) {
+        this.screen = s
         //Creer bal
         this.div = document.createElement("ball")
         document.body.appendChild(this.div)
@@ -56,6 +59,7 @@ class Ball {
             //Als het uit scherm gaat komt het aan de linker-kant weer tevoorschijn.
             //Das namelijk de x positie in de verste hoek van het scherm (window.innerWidth)
             this.x = window.innerWidth
+            this.screen.lives--
             console.log("lose a life")
         } 
         //Transform/update nieuwe bal positie              
