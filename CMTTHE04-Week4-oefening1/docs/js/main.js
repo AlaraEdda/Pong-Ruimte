@@ -78,10 +78,12 @@ var Ball = (function () {
 }());
 var Game = (function () {
     function Game() {
+        this.screen = new PlayScreen();
         this.gameLoop();
     }
     Game.prototype.gameLoop = function () {
         var _this = this;
+        this.screen.update();
         requestAnimationFrame(function () { return _this.gameLoop(); });
     };
     return Game;

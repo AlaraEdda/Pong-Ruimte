@@ -1,6 +1,5 @@
-
-
 class PlayScreen {
+    
     game:Game
     private balls: Ball[] = []
     private paddle:Paddle
