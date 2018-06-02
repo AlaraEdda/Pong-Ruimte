@@ -1,4 +1,4 @@
-/// <reference path="ball.ts"/>
+
 
 class PlayScreen {
     game:Game
