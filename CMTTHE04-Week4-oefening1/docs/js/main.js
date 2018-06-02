@@ -81,6 +81,10 @@ var Game = (function () {
         this.screen = new StartScreen(this);
         this.gameLoop();
     }
+    Game.prototype.showPlayScreen = function () {
+        document.body.innerHTML = "";
+        this.screen = new PlayScreen(this);
+    };
     Game.prototype.gameLoop = function () {
         var _this = this;
         this.screen.update();
@@ -135,6 +139,7 @@ var StartScreen = (function () {
     StartScreen.prototype.update = function () {
     };
     StartScreen.prototype.splashClicked = function () {
+        this.game.showPlayScreen();
     };
     return StartScreen;
 }());
