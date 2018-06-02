@@ -5,8 +5,8 @@ class Game {
     screen: any
 
     constructor() {
-        //Variabel "Screen" aanmaken die verwijst naar playscreen.ts class
-        this.screen = new PlayScreen()
+        //Variabel "Screen" aanmaken die verwijst naar statscreen.ts class
+        this.screen = new StartScreen(this)
 
         //Speel gameloop functie af.
         this.gameLoop()        

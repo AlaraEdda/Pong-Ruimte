@@ -78,7 +78,7 @@ var Ball = (function () {
 }());
 var Game = (function () {
     function Game() {
-        this.screen = new PlayScreen();
+        this.screen = new StartScreen(this);
         this.gameLoop();
     }
     Game.prototype.gameLoop = function () {
