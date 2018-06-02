@@ -78,30 +78,11 @@ var Ball = (function () {
 }());
 var Game = (function () {
     function Game() {
-        this.balls = [];
-        this.paddle = new Paddle(20, 87, 83);
-        for (var i = 0; i < 5; i++) {
-            this.balls.push(new Ball());
-        }
         this.gameLoop();
     }
     Game.prototype.gameLoop = function () {
         var _this = this;
-        for (var _i = 0, _a = this.balls; _i < _a.length; _i++) {
-            var b = _a[_i];
-            if (this.checkCollision(b.getRectangle(), this.paddle.getRectangle())) {
-                b.hitPaddle();
-            }
-            b.update();
-        }
-        this.paddle.update();
         requestAnimationFrame(function () { return _this.gameLoop(); });
-    };
-    Game.prototype.checkCollision = function (a, b) {
-        return (a.left <= b.right &&
-            b.left <= a.right &&
-            a.top <= b.bottom &&
-            b.top <= a.bottom);
     };
     return Game;
 }());
