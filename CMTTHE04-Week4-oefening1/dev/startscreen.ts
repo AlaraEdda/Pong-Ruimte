@@ -2,7 +2,7 @@
 class StartScreen {
 
     private div: HTMLElement
-    private game : Game 
+    private game : Game
 
     constructor(g:Game) {
        this.game = g
@@ -18,7 +18,6 @@ class StartScreen {
 
     //Update functie
     public update(){
-        
     }
 
     private splashClicked() {   
