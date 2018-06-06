@@ -1,42 +1,47 @@
 /// <reference path="ball.ts"/>
+//leidend SCHERM
 
 class Game {
+    screen: any
     
-    private balls: Ball[] = []
-    private paddle:Paddle
-
     constructor() {
-        this.paddle = new Paddle(20, 87, 83)
-        
-        for (let i = 0; i < 5; i++) {
-            this.balls.push(new Ball())
-        }
+        //Variabel "Screen" aanmaken die verwijst naar statscreen.ts class
+        this.screen = new StartScreen(this)
 
+        //Speel gameloop functie af.
         this.gameLoop()        
     }
-    
+
+    //Public houd in dat je het ook buiten deze file kan gaan gebruiken.
+    //Richt je door naar playsreen.ts
+    public showPlayScreen(){
+
+        //Dit maakt de body van html leeg, zodat je alleen het achergrond ziet.
+        document.body.innerHTML = ""
+
+        //"This" is een instance. De variabele this.screen verwijst naar playscreen.ts
+        this.screen = new PlayScreen(this)
+    }
+
+    //Word afgespeeld wanneer playscreen.ts is uitgespeeld
+    public showEndScreen(score:number){
+        //Leegt de screen
+        document.body.innerHTML = ""
+
+        //Neemt "score" parameter in zich mee van playscreen.ts
+        //Gaat met deze functie naar gameover.ts
+        this.screen = new GameOverScreen(this, score)
+    }
+
     private gameLoop():void{
-        for (let b of this.balls) {
-            if (this.checkCollision(b.getRectangle(), this.paddle.getRectangle())) {
-                b.hitPaddle()
-            }
+        //Update screen aanroepen
+        this.screen.update()
 
-            b.update()
-        }
-
-        this.paddle.update()
-        
+        //update gameloop 60x per seconde
         requestAnimationFrame(() => this.gameLoop())
     }
-
-    private checkCollision(a: ClientRect, b: ClientRect) {
-        return (a.left <= b.right &&
-            b.left <= a.right &&
-            a.top <= b.bottom &&
-            b.top <= a.bottom)
-    }
-    
 } 
 
-
+//Laat venster = new game
 window.addEventListener("load", () => new Game())
+

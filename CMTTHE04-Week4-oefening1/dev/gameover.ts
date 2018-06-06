@@ -1,8 +1,0 @@
-class GameOverScreen {
-    constructor() {
-
-    }
-    update() {
-
-    }
-}
