@@ -16,3 +16,10 @@ _Can you save the Spaceships? Or will you die trying?<br>_
 
 Link To the Online Version
 https://stud.hosted.hr.nl/0931871/Space-Pong/docs/
+```
+.
+.
+.
+
+I keep hitting the spacebar, but I'm still on 🌍.
+```
