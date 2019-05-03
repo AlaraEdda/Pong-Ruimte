@@ -104,15 +104,11 @@ var GameOverScreen = (function () {
         var _this = this;
         this.game = g;
         this.score = s;
-        var text = document.createElement("h1");
-        text.innerHTML = "Game Over<br><br>Restart";
-        text.classList.add("splash");
-        text.addEventListener("click", function () { return _this.Clicked(); });
-        document.body.appendChild(text);
-        var score = document.createElement("H3");
-        score.innerHTML = "Score: " + this.score;
-        score.classList.add("endScore");
-        document.body.appendChild(score);
+        this.div = document.createElement("gameover");
+        document.body.appendChild(this.div);
+        this.div.addEventListener("click", function () { return _this.Clicked(); });
+        this.div.innerHTML = "GAME OVER           " + "Score: " + this.score;
+        document.body.appendChild(this.div);
     }
     GameOverScreen.prototype.update = function () {
     };
@@ -121,24 +117,24 @@ var GameOverScreen = (function () {
     };
     return GameOverScreen;
 }());
-var IDK = (function () {
-    function IDK(s) {
+var Header = (function () {
+    function Header(s) {
         this.screen = s;
-        this.text = document.createElement("h3");
+        this.text = document.createElement("header");
         this.text.innerHTML = "score:0&emsp;&emsp;lives:0";
         document.body.appendChild(this.text);
     }
-    IDK.prototype.update = function () {
+    Header.prototype.update = function () {
         this.text.innerHTML = "score:" + this.screen.score + "&emsp;&emsp;lives:" + this.screen.lives;
     };
-    return IDK;
+    return Header;
 }());
 var PlayScreen = (function () {
     function PlayScreen(g) {
         this.balls = [];
         this.score = -5;
-        this.lives = 10;
-        this.idk = new IDK(this);
+        this.lives = 1;
+        this.gameheader = new Header(this);
         this.game = g;
         this.paddle = new Paddle(20, 87, 83);
         for (var i = 0; i < 5; i++) {
@@ -158,7 +154,7 @@ var PlayScreen = (function () {
             b.update();
         }
         this.paddle.update();
-        this.idk.update();
+        this.gameheader.update();
     };
     PlayScreen.prototype.checkCollision = function (a, b) {
         return (a.left <= b.right &&
@@ -175,7 +171,7 @@ var StartScreen = (function () {
     function StartScreen(g) {
         var _this = this;
         this.game = g;
-        this.div = document.createElement("splash");
+        this.div = document.createElement("start");
         document.body.appendChild(this.div);
         this.div.addEventListener("click", function () { return _this.splashClicked(); });
         this.div.innerHTML = "START THE GAME";

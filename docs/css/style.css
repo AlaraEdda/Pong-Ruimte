@@ -21,7 +21,7 @@ body * {
     background-repeat: no-repeat;
 }
 
-splash {
+start {
     font-size:2em;
     cursor: pointer;
     width:500px;
@@ -29,7 +29,20 @@ splash {
     margin-top:calc(50vh - 50px);
     margin-left:calc(50vw - 250px);
     text-align:center;
-   
+}
+
+gameover {
+    font-size:2em;
+    cursor: pointer;
+    width:500px;
+    margin-top:calc(50vh - 50px);
+    margin-left:calc(50vw - 250px);
+}
+
+header {
+    margin-top:calc(10vh - 50px);
+    margin-left:calc(50vw - 250px);
+    text-align:center;
 }
 
 ball {
@@ -42,7 +55,3 @@ paddle {
     width:25px; height:100px;
 }
 
-.endScore{
-    margin-left: calc(50vw -90px);
-    margin-top: 71vh;
-}

@@ -8,7 +8,7 @@ class StartScreen {
        this.game = g
 
         //Splash element is opgehaald van style.css & verwerkt in index.html
-        this.div = document.createElement("splash")
+        this.div = document.createElement("start")
         document.body.appendChild(this.div)
 
         //Als je klikt word slashClicked functie uitgevoerd.

@@ -1,12 +1,12 @@
-//Een file waarvan ik niet weet wtf het doen. Maar euhm. het werkt. dus yolo.
+//Zorgt ervoor dat we de levens en punten kunnen zien tijdens het spelen.
 
-class IDK{
+class Header{
     text:HTMLElement
     private screen:PlayScreen
 
     constructor(s:PlayScreen){
         this.screen = s
-        this.text = document.createElement("h3")
+        this.text = document.createElement("header")
         this.text.innerHTML = "score:0&emsp;&emsp;lives:0"
         document.body.appendChild(this.text)
     }

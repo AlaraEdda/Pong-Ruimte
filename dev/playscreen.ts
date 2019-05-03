@@ -3,15 +3,15 @@ class PlayScreen {
     game:Game
     private balls: Ball[] = []
     private paddle:Paddle
-    private idk : IDK
+    private gameheader : Header
     public score: number
     public lives: number
 
     constructor(g:Game) {
         this.score = -5 //Score start.
-        this.lives = 10 //Aantal keren dat je af mag
+        this.lives = 1 //Aantal keren dat je af mag
 
-        this.idk = new IDK(this)
+        this.gameheader = new Header(this)
 
         this.game = g
 
@@ -48,7 +48,7 @@ class PlayScreen {
         } 
         //update paddle
         this.paddle.update()
-        this.idk.update()
+        this.gameheader.update()
     }
 
     //Botsing paddle & bal
