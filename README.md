@@ -1,5 +1,5 @@
 # Space Pong
-I keep hitting the spacebar, but I'm still on 🌍._
+_I keep hitting the spacebar, but I'm still on 🌍._
 
 ```
 "In this war...
@@ -9,15 +9,15 @@ I keep hitting the spacebar, but I'm still on 🌍._
 ```                     
 **-Yoda**
 
-<br><br>
 ## Assignment Explained
-I have made this little exercise to warm myself up to Typescript. 
-The goal of the game is to save as many Spaceships as you can by moving your Peddle up and down.
-Everytime your paddle saves a Spaceship from dissapearing into the dark unknown (aka out of sight); you get a point.
-But everytime a Spaceship dissapears you lose a live.
+I have made this little exercise to warm myself up to Typescript. <br>
+The goal of the game is to save as many Spaceships as you can by moving your Peddle up(W) and down(S). <br>
+Everytime your paddle saves a Spaceship; you get a point.<br>
+But everytime a Spacehsip dissapears into the dark unknown (aka out of sight); you lose a live.<br>
 
-Can you save the Spaceships? Or will you die trying?
+<br>Can you save the Spaceships? Or will you die trying?<br>
 
-_Look up at the ✨ and not down at your keyboard. 
+_Look up at the ✨ and not down at your keyboard._
+
 <br>
 
