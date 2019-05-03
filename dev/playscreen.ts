@@ -9,7 +9,7 @@ class PlayScreen {
 
     constructor(g:Game) {
         this.score = -5 //Score start.
-        this.lives = 1 //Aantal keren dat je af mag
+        this.lives = 10 //Aantal keren dat je af mag
 
         this.gameheader = new Header(this)
 

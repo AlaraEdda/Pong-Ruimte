@@ -37,6 +37,16 @@ gameover {
     width:500px;
     margin-top:calc(50vh - 50px);
     margin-left:calc(50vw - 250px);
+    text-align:center;
+}
+
+gameoverscore {
+    font-size:2em;
+    cursor: pointer;
+    width:500px;
+    margin-top:calc(60vh - 50px);
+    margin-left:calc(50vw - 250px);
+    text-align:center;
 }
 
 header {

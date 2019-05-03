@@ -15,18 +15,18 @@ class GameOverScreen {
         // text.addEventListener("click",()=> this.Clicked())
         // document.body.appendChild(text)
 
-        //Splash element is opgehaald van style.css & verwerkt in index.html
+        //Gameover element is opgehaald van style.css & verwerkt in index.html
         this.div = document.createElement("gameover")
         document.body.appendChild(this.div)
-
-        //Als je klikt word slashClicked functie uitgevoerd.
-        this.div.addEventListener("click", ()=>this.Clicked())
-        //this.div.innerHTML = "GAME OVER"
+        this.div.addEventListener("click", ()=>this.Clicked())  //Als je klikt word Clicked functie uitgevoerd.
+        this.div.innerHTML = "GAME OVER"
 
         //Score
-        //let score = document.createElement("gameoverscore")
-        this.div.innerHTML = "GAME OVER           " + "Score: " + this.score
-        document.body.appendChild(this.div)
+        let score = document.createElement("gameoverscore")
+        document.body.appendChild(score)
+        score.addEventListener("click", ()=>this.Clicked())  //Als je klikt word Clicked functie uitgevoerd.
+        score.innerHTML = "Score: " + this.score
+        
     }
     public update(): void {
     }

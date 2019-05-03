@@ -107,8 +107,11 @@ var GameOverScreen = (function () {
         this.div = document.createElement("gameover");
         document.body.appendChild(this.div);
         this.div.addEventListener("click", function () { return _this.Clicked(); });
-        this.div.innerHTML = "GAME OVER           " + "Score: " + this.score;
-        document.body.appendChild(this.div);
+        this.div.innerHTML = "GAME OVER";
+        var score = document.createElement("gameoverscore");
+        document.body.appendChild(score);
+        score.addEventListener("click", function () { return _this.Clicked(); });
+        score.innerHTML = "Score: " + this.score;
     }
     GameOverScreen.prototype.update = function () {
     };
@@ -133,7 +136,7 @@ var PlayScreen = (function () {
     function PlayScreen(g) {
         this.balls = [];
         this.score = -5;
-        this.lives = 1;
+        this.lives = 10;
         this.gameheader = new Header(this);
         this.game = g;
         this.paddle = new Paddle(20, 87, 83);
